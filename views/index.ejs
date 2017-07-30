@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="/library/jquery-1.9.0.min.js"></script>
+    <script>
+    </script>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to Passport Authentication</h1>
+ 
+
+    <p>
+        <a href="/auth/facebook"><img src="login-with-facebook.png" width="154" height="22">
+        </a>
+    </p>
+    <p>
+        <a href="/auth/twitter"><img src="twitter.png" width="154" height="22">
+        </a>
+    </p>
+    <p>
+        <a href="/auth/google"><img src="google.png" width="154" height="22">
+        </a>
+    </p>
+
+    <div >
+        <% if(user) {%>
+            <table>
+
+                <% for(var keys in user) { %>
+                <%if(keys!="_raw") { %>    
+                <tr>
+                        <td>
+                            <%=keys%>
+                        </td>
+                        <td>
+                            <%=user[keys]%>
+                        </td>
+                    </tr>
+                <%} %>
+                    <%} %>
+            </table>
+            <%} else {%>
+                <p> User not avaialble !</p>
+                <%}%>
+    </div>
+</body>
+
+</html>
